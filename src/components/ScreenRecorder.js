@@ -28,12 +28,22 @@ const ScreenRecorder = () => {
   };
 
   return (
-    <div>
-      <video ref={videoRef} controls />
+    <div className="flex flex-col items-center justify-center h-screen">
+      <video ref={videoRef} className="w-full max-w-screen-lg" controls />
       {!recording ? (
-        <button onClick={startRecording}>Start Recording</button>
+        <button
+          onClick={startRecording}
+          className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+        >
+          Start Recording
+        </button>
       ) : (
-        <button onClick={stopRecording}>Stop Recording</button>
+        <button
+          onClick={stopRecording}
+          className="mt-4 px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:border-red-300"
+        >
+          Stop Recording
+        </button>
       )}
     </div>
   );
